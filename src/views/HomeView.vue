@@ -254,60 +254,82 @@
         </h3>
 
         <div class="plans">
-          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 d-flex justify-content-center">
-            <div v-for="(plan, index) in pricingData" :key="index" class="col">
-              <div class="cardWrap px-3 card mb-4 box-shadow h-100">
-                <div class="card-header pb-2 pt-4">
-                  <h1 class="my-0 text-center pb-3">{{ plan.title }}</h1>
-                </div>
-                <div class="card-body">
-                  <h6 class="card-title pricing-card-title fw-bold">
-                    {{ plan.creativeHeader }}
-                  </h6>
-                  <ul class="list-unstyled mt-1 mb-4">
-                    <li class="list-item pt-2" v-for="(creativeItem, i) in plan.creativeItem" :key="i">
-                      <div class="list-wrapper d-flex justify-content-between">
-                        <div class="list-name">
-                          {{ creativeItem.name }}
-                        </div>
-                        <div class="list-value">
-                          {{ creativeItem.value }}
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-
-                  <h6 class="card-title pricing-card-title pt-4 fw-bold">
-                    {{ plan.contentHeader }}
-                  </h6>
-                  <ul class="list-unstyled mt-1 mb-4 ">
-                    <li class="list-item pt-2" v-for="(contentItem, i) in plan.contentItem" :key="i">
-                      <div class="list-wrapper d-flex justify-content-between">
-                        <div class="list-name">
-                          {{ contentItem.name }}
-                        </div>
-                        <div class="list-value">
-                          {{ contentItem.value }}
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-
-                  <ul class="list-unstyled mt-1 mb-4 ">
-                    <li class="list-item pt-2" v-for="(packagePriceItem, i) in plan.packagePriceItem" :key="i">
-                      <div class="list-wrapper d-flex justify-content-between pt-4">
-                        <div class="list-name package-price fw-bold">
-                          {{ packagePriceItem.name }}
-                        </div>
-                        <div class="list-value package-price fw-bold">
-                          {{ packagePriceItem.value }}
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+          <div class="table-wrap">
+            <table class="table">
+            <thead>
+              <tr>
+                  <td scope="col"></td>
+                  <td scope="col"><div class="btn-basic"><span class="btn-basic-wrap">Basic</span></div></td>
+                  <td scope="col"><div class="btn-pro"><span class="btn-basic-wrap">Pro</span></div></td>
+                  <td scope="col"><div class="btn-pro-plus"><span class="btn-basic-wrap">Pro +</span></div></td>
+              </tr>
+              <tr>
+                <th></th>       
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="plan-title"><strong>Creatives</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Social media post designs</td>
+                <td class="text-center">10</td>
+                <td class="text-center">15</td>
+                <td class="text-center">20</td>
+              </tr>
+              <tr>
+                <td>Story boards</td>
+                <td class="text-center">-</td>
+                <td class="text-center">1</td>
+                <td class="text-center">2</td>
+              </tr>
+              <tr>
+                <td>Animated videos</td>
+                <td class="text-center">-</td>
+                <td class="text-center">1</td>
+                <td class="text-center">2</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="plan-title"><strong>Content</strong></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+              </tr>
+              <tr>
+                <td>Blogs</td>
+                <td class="text-center">-</td>
+                <td class="text-center">2</td>
+                <td class="text-center">4</td>
+              </tr>
+              <tr>
+                <td>Post captions</td>
+                <td class="text-center">10</td>
+                <td class="text-center">15</td>
+                <td class="text-center">20</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="plan-title"><strong>Package Price</strong></td>
+                <td class="plan-title text-center"><strong>$280</strong></td>
+                <td class="plan-title text-center"><strong>$800</strong></td>
+                <td class="plan-title text-center"><strong>$1400</strong></td>
+              </tr>
+            </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -825,34 +847,72 @@ export default {
   }
 
   .plans {
-    .cardWrap {
-      border-radius: 22px;
-      background-color: #05223A;
-      color: #fff;
-      .card-header {
-        border-bottom: unset;
-        h1 {
-          font-family: "Bakbak One", cursive;
-        }
-      }
-      .card-title {
-        font-size: 22px;
-      }
-      .list-item {
-        border-bottom: 1px solid #00579F;
-        padding-bottom: 10px;
-        .list-name {
-          &.package-price {
-            font-size: 22px;
-          }
-        }
-        .list-value {
-          &.package-price {
-            font-size: 22px;
-          }
-        }
-      }
+   
+    .table-wrap {
+      overflow-x: auto;
     }
+    .table {
+      width: 100%;
+      border: none;
+      @media only screen and (max-width: 768px) {
+        width: 500px;
+      }
+      @media only screen and (max-width: 375px) {
+        width: 400px;
+      }
+      th {
+        color: #fff;
+        border: none;
+      }
+      td {
+        color: #fff;
+        border: none;
+      }
+      thead {
+        .btn-basic {
+          font-family: "Bakbak One", cursive;
+          background-color: #05223A;
+          text-align: center;
+          border-radius: 7px;
+          padding: 5px;
+          font-size: 34px;
+          border: 1px solid #005499;
+          min-width: 100px;
+          
+        }
+        .btn-pro {
+          font-family: "Bakbak One", cursive;
+          background-color: #05223A;
+          text-align: center;
+          border-radius: 7px;
+          padding: 5px;
+          font-size: 34px;
+          border: 1px solid #005499;
+          min-width: 100px;
+        }
+        .btn-pro-plus {
+          font-family: "Bakbak One", cursive;
+          background-color: #05223A;
+          text-align: center;
+          border-radius: 7px;
+          padding: 5px;
+          font-size: 34px;
+          border: 1px solid #005499;
+          min-width: 100px;
+        }
+      }
+      tbody {
+        background-color: #05223A;
+        border: 1px solid #005499;
+        border-radius: 22px;
+      
+        .plan-title {
+          font-size: 20px;
+        }
+      }
+
+    }
+
   }
 }
 
