@@ -261,107 +261,136 @@
 
       <section class="subscriptions" id="subscriptions_sec">
         <div class="container">
-          <h3 class="subscriptionsTitle text-center text-white">
-            Vairal Plans
+          <h3 class="subscriptionsTitle text-center text-white ">
+            Compare Vairal Plans
           </h3>
+          <!-- <div class="plans-slider">
+            <div class="carousel-item">
+              <div class="plans">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 d-flex justify-content-center">
+                  <div v-for="(plan, index) in pricingData" :key="index" class="col">
+                    <div class="cardWrap px-3 card mb-4 box-shadow h-100">
+                      <div class="card-header pb-2 pt-4">
+                        <h1 class="my-0 text-center pb-3">{{ plan.title }}</h1>
+                      </div>
+                      <div class="card-body">
+                        <h6 class="card-title pricing-card-title fw-bold">
+                          {{ plan.creativeHeader }}
+                        </h6>
+                        <ul class="list-unstyled mt-1 mb-4">
+                          <li class="list-item pt-2" v-for="(creativeItem, i) in plan.creativeItem" :key="i">
+                            <div class="list-wrapper d-flex justify-content-between">
+                              <div class="list-name">
+                                {{ creativeItem.name }}
+                              </div>
+                              <div class="list-value">
+                                {{ creativeItem.value }}
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
 
-          <div class="plans">
-            <div class="table-wrap">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <td scope="col"></td>
-                    <td scope="col">
-                      <div class="btn-basic">
-                        <span class="btn-basic-wrap">Basic</span>
+                        <h6 class="card-title pricing-card-title pt-4 fw-bold">
+                          {{ plan.contentHeader }}
+                        </h6>
+                        <ul class="list-unstyled mt-1 mb-4 ">
+                          <li class="list-item pt-2" v-for="(contentItem, i) in plan.contentItem" :key="i">
+                            <div class="list-wrapper d-flex justify-content-between">
+                              <div class="list-name">
+                                {{ contentItem.name }}
+                              </div>
+                              <div class="list-value">
+                                {{ contentItem.value }}
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+
+                        <ul class="list-unstyled mt-1 mb-4 ">
+                          <li class="list-item pt-2" v-for="(packagePriceItem, i) in plan.packagePriceItem" :key="i">
+                            <div class="list-wrapper d-flex justify-content-between pt-4">
+                              <div class="list-name package-price fw-bold">
+                                {{ packagePriceItem.name }}
+                              </div>
+                              <div class="list-value package-price fw-bold">
+                                {{ packagePriceItem.value }}
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
                       </div>
-                    </td>
-                    <td scope="col">
-                      <div class="btn-pro">
-                        <span class="btn-basic-wrap">Pro</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <div class="plans-slider">
+            <div class="carousel-item">
+              <div class="plans">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 d-flex justify-content-center">
+                  <!-- Add the v-for loop to generate the plan cards -->
+                  <div v-for="(plan, index) in pricingData" :key="index" class="col">
+                    <div class="cardWrap px-3 card mb-4 box-shadow h-100">
+                      <div class="card-header pb-2 pt-4">
+                        <h1 class="my-0 text-center pb-3">{{ plan.title }}</h1>
                       </div>
-                    </td>
-                    <td scope="col">
-                      <div class="btn-pro-plus">
-                        <span class="btn-basic-wrap">Pro +</span>
+                      <div class="card-body">
+                        <!-- Group the creativeHeader, contentHeader, and packagePriceItem in a div -->
+                        <div>
+                          <h6 class="card-title pricing-card-title fw-bold">
+                            {{ plan.creativeHeader }}
+                          </h6>
+                          <ul class="list-unstyled mt-1 mb-4">
+                            <li class="list-item pt-2" v-for="(creativeItem, i) in plan.creativeItem" :key="i">
+                              <div class="list-wrapper d-flex justify-content-between">
+                                <div class="list-name">
+                                  {{ creativeItem.name }}
+                                </div>
+                                <div class="list-value">
+                                  {{ creativeItem.value }}
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+
+                          <h6 class="card-title pricing-card-title pt-4 fw-bold">
+                            {{ plan.contentHeader }}
+                          </h6>
+                          <ul class="list-unstyled mt-1 mb-4 ">
+                            <li class="list-item pt-2" v-for="(contentItem, i) in plan.contentItem" :key="i">
+                              <div class="list-wrapper d-flex justify-content-between">
+                                <div class="list-name">
+                                  {{ contentItem.name }}
+                                </div>
+                                <div class="list-value">
+                                  {{ contentItem.value }}
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+
+                          <ul class="list-unstyled mt-1 mb-4 ">
+                            <li class="list-item pt-2" v-for="(packagePriceItem, i) in plan.packagePriceItem" :key="i">
+                              <div class="list-wrapper d-flex justify-content-between pt-4">
+                                <div class="list-name package-price fw-bold">
+                                  {{ packagePriceItem.name }}
+                                </div>
+                                <div class="list-value package-price fw-bold">
+                                  {{ packagePriceItem.value }}
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody class="p-5">
-                  <tr>
-                    <td class="plan-title"><strong>Creatives</strong></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr class="td-bg-light">
-                    <td>Social media post designs</td>
-                    <td class="text-center">10</td>
-                    <td class="text-center">15</td>
-                    <td class="text-center">20</td>
-                  </tr>
-                  <tr class="td-bg-light">
-                    <td>Story boards</td>
-                    <td class="text-center">-</td>
-                    <td class="text-center">1</td>
-                    <td class="text-center">2</td>
-                  </tr>
-                  <tr class="td-bg-light">
-                    <td>Animated videos</td>
-                    <td class="text-center">-</td>
-                    <td class="text-center">1</td>
-                    <td class="text-center">2</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td class="plan-title"><strong>Content</strong></td>
-                    <td class="text-center"></td>
-                    <td class="text-center"></td>
-                    <td class="text-center"></td>
-                  </tr>
-                  <tr class="td-bg-light">
-                    <td>Blogs</td>
-                    <td class="text-center">-</td>
-                    <td class="text-center">2</td>
-                    <td class="text-center">4</td>
-                  </tr>
-                  <tr class="td-bg-light">
-                    <td>Post captions</td>
-                    <td class="text-center">10</td>
-                    <td class="text-center">15</td>
-                    <td class="text-center">20</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td class="plan-title"><strong>Package Price</strong></td>
-                    <td class="plan-title text-center">
-                      <strong>$280</strong>
-                    </td>
-                    <td class="plan-title text-center">
-                      <strong>$800</strong>
-                    </td>
-                    <td class="plan-title text-center">
-                      <strong>$1400</strong>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -711,6 +740,32 @@ export default {
         },
       ],
     });
+
+    $(".plans-slider").slick({
+      slidesToShow: 3, // Show three cards on desktop
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      dots: true,
+      arrows: true,
+      // prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+      // nextArrow: '<button type="button" class="slick-next">Next</button>',
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            arrows: false,
+          },
+        },
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 1,
+          },
+        },
+      ],
+    });
   },
   methods: {
     sendEmail() {
@@ -926,114 +981,37 @@ export default {
     padding-bottom: 30px;
     font-size: 44px;
     @media only screen and (max-width: 768px) {
-      font-size: 26px;
-    }
+        font-size: 26px;
+      }
+
   }
 
   .plans {
-    .table-wrap {
-      overflow-x: auto;
-    }
-    .table {
-      width: 100%;
-      border: none;
-      @media only screen and (max-width: 768px) {
-        width: 500px;
-      }
-      @media only screen and (max-width: 375px) {
-        width: 400px;
-      }
-      th {
-        color: #fff;
-        border: none;
-      }
-      td {
-        color: #fff;
-        border: none;
-        padding-bottom: 0;
-      }
-      thead {
-        .btn-basic {
+    .cardWrap {
+      border-radius: 22px;
+      background-color: #05223A;
+      color: #fff;
+      .card-header {
+        border-bottom: unset;
+        h1 {
           font-family: "Bakbak One", cursive;
-          background-color: #05223a;
-          text-align: center;
-          border-radius: 7px;
-          font-size: 34px;
-          border: 1px solid #005499;
-          min-width: 100px;
-
-          @media only screen and (max-width: 768px){
-            font-size: 24px;
-          }
-        }
-        .btn-pro {
-          font-family: "Bakbak One", cursive;
-          background-color: #05223a;
-          text-align: center;
-          border-radius: 7px;
-          font-size: 34px;
-          border: 1px solid #005499;
-          min-width: 100px;
-
-          @media only screen and (max-width: 768px){
-            font-size: 24px;
-          }
-        }
-        .btn-pro-plus {
-          font-family: "Bakbak One", cursive;
-          background-color: #05223a;
-          text-align: center;
-          border-radius: 7px;
-          font-size: 34px;
-          border: 1px solid #005499;
-          min-width: 100px;
-
-          @media only screen and (max-width: 768px){
-            font-size: 24px;
-          }
         }
       }
-
-      tbody {
-        background-color: #05223a;
-        border: 1px solid #005499;
-        border-radius: 22px;
-        
-
-        tr {
-
-          &.td-bg-light{
-            background-color: #00589f40;
-            border-bottom: 4px solid #05223a;
-            border-radius: 8px;
-          }
-
-          td{
-
-              &:first-child{
-                padding-left: 30px;
-              }
-              &:last-child{
-                padding-right: 30px;
-              }
-            }
-
-          &:first-child {
-
-            td{
-              padding-top: 30px;
-            }
-          }
-          &:last-child {
-
-            td{
-              padding-bottom: 30px;
-            }
+      .card-title {
+        font-size: 22px;
+      }
+      .list-item {
+        border-bottom: 1px solid #00579F;
+        padding-bottom: 10px;
+        .list-name {
+          &.package-price {
+            font-size: 22px;
           }
         }
-
-        .plan-title {
-          font-size: 18px;
+        .list-value {
+          &.package-price {
+            font-size: 22px;
+          }
         }
       }
     }
