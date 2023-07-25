@@ -261,10 +261,11 @@
 
       <section class="subscriptions" id="subscriptions_sec">
         <div class="container">
-          <h3 class="subscriptionsTitle text-center text-white ">
+          <h3 class="subscriptionsTitle text-center text-white">
             Compare Vairal Plans
           </h3>
-          <!-- <div class="plans-slider">
+          <!-- 
+            <div class="plans-slider">
             <div class="carousel-item">
               <div class="plans">
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 d-flex justify-content-center">
@@ -326,11 +327,20 @@
             </div>
           </div> -->
           <div class="plans-slider">
-            <div class="carousel-item">
+            <!-- <div class="carousel-item">
               <div class="plans">
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 d-flex justify-content-center">
-                  <!-- Add the v-for loop to generate the plan cards -->
-                  <div v-for="(plan, index) in pricingData" :key="index" class="col">
+                <div
+                  class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 d-flex justify-content-center"
+                >
+                </div>
+              </div>
+            </div> -->
+            <!-- Add the v-for loop to generate the plan cards -->
+            <div
+                    v-for="(plan, index) in pricingData"
+                    :key="index"
+                    class="col"
+                    >
                     <div class="cardWrap px-3 card mb-4 box-shadow h-100">
                       <div class="card-header pb-2 pt-4">
                         <h1 class="my-0 text-center pb-3">{{ plan.title }}</h1>
@@ -342,8 +352,14 @@
                             {{ plan.creativeHeader }}
                           </h6>
                           <ul class="list-unstyled mt-1 mb-4">
-                            <li class="list-item pt-2" v-for="(creativeItem, i) in plan.creativeItem" :key="i">
-                              <div class="list-wrapper d-flex justify-content-between">
+                            <li
+                              class="list-item pt-2"
+                              v-for="(creativeItem, i) in plan.creativeItem"
+                              :key="i"
+                            >
+                              <div
+                                class="list-wrapper d-flex justify-content-between"
+                              >
                                 <div class="list-name">
                                   {{ creativeItem.name }}
                                 </div>
@@ -354,12 +370,20 @@
                             </li>
                           </ul>
 
-                          <h6 class="card-title pricing-card-title pt-4 fw-bold">
+                          <h6
+                            class="card-title pricing-card-title pt-4 fw-bold"
+                          >
                             {{ plan.contentHeader }}
                           </h6>
-                          <ul class="list-unstyled mt-1 mb-4 ">
-                            <li class="list-item pt-2" v-for="(contentItem, i) in plan.contentItem" :key="i">
-                              <div class="list-wrapper d-flex justify-content-between">
+                          <ul class="list-unstyled mt-1 mb-4">
+                            <li
+                              class="list-item pt-2"
+                              v-for="(contentItem, i) in plan.contentItem"
+                              :key="i"
+                            >
+                              <div
+                                class="list-wrapper d-flex justify-content-between"
+                              >
                                 <div class="list-name">
                                   {{ contentItem.name }}
                                 </div>
@@ -370,9 +394,17 @@
                             </li>
                           </ul>
 
-                          <ul class="list-unstyled mt-1 mb-4 ">
-                            <li class="list-item pt-2" v-for="(packagePriceItem, i) in plan.packagePriceItem" :key="i">
-                              <div class="list-wrapper d-flex justify-content-between pt-4">
+                          <ul class="list-unstyled mt-1 mb-4">
+                            <li
+                              class="list-item pt-2"
+                              v-for="(
+                                packagePriceItem, i
+                              ) in plan.packagePriceItem"
+                              :key="i"
+                            >
+                              <div
+                                class="list-wrapper d-flex justify-content-between pt-4"
+                              >
                                 <div class="list-name package-price fw-bold">
                                   {{ packagePriceItem.name }}
                                 </div>
@@ -386,11 +418,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
           </div>
-
         </div>
       </section>
 
@@ -744,8 +772,9 @@ export default {
     $(".plans-slider").slick({
       slidesToShow: 3, // Show three cards on desktop
       slidesToScroll: 1,
-      autoplay: true,
+      autoplay: false,
       autoplaySpeed: 2000,
+      loop: false,
       dots: true,
       arrows: true,
       // prevArrow: '<button type="button" class="slick-prev">Previous</button>',
@@ -755,13 +784,13 @@ export default {
           breakpoint: 768,
           settings: {
             slidesToShow: 1,
-            arrows: false,
+            arrows: true,
           },
         },
         {
           breakpoint: 992,
           settings: {
-            slidesToShow: 1,
+            slidesToShow: 2,
           },
         },
       ],
@@ -981,16 +1010,36 @@ export default {
     padding-bottom: 30px;
     font-size: 44px;
     @media only screen and (max-width: 768px) {
-        font-size: 26px;
-      }
-
+      font-size: 26px;
+    }
   }
 
-  .plans {
+  .plans-slider {
+
+    .slick-slide{
+      &:last-child{
+        .cardWrap{
+          margin-right: 0;
+        }
+      }
+      &:first-child{
+        .cardWrap{
+          margin-left: 0;
+        }
+      }
+    }
     .cardWrap {
       border-radius: 22px;
-      background-color: #05223A;
+      background-color: #05223a;
       color: #fff;
+      margin-right: 10px;
+      margin-left: 10px;
+
+      @media only screen and (max-width: 768px ){
+        margin-right: 0;
+      margin-left: 0;
+      }
+
       .card-header {
         border-bottom: unset;
         h1 {
@@ -1001,7 +1050,7 @@ export default {
         font-size: 22px;
       }
       .list-item {
-        border-bottom: 1px solid #00579F;
+        border-bottom: 1px solid #00579f;
         padding-bottom: 10px;
         .list-name {
           &.package-price {
