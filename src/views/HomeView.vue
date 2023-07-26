@@ -264,160 +264,85 @@
           <h3 class="subscriptionsTitle text-center text-white">
             Compare Vairal Plans
           </h3>
-          <!-- 
-            <div class="plans-slider">
-            <div class="carousel-item">
-              <div class="plans">
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 d-flex justify-content-center">
-                  <div v-for="(plan, index) in pricingData" :key="index" class="col">
-                    <div class="cardWrap px-3 card mb-4 box-shadow h-100">
-                      <div class="card-header pb-2 pt-4">
-                        <h1 class="my-0 text-center pb-3">{{ plan.title }}</h1>
-                      </div>
-                      <div class="card-body">
-                        <h6 class="card-title pricing-card-title fw-bold">
-                          {{ plan.creativeHeader }}
-                        </h6>
-                        <ul class="list-unstyled mt-1 mb-4">
-                          <li class="list-item pt-2" v-for="(creativeItem, i) in plan.creativeItem" :key="i">
-                            <div class="list-wrapper d-flex justify-content-between">
-                              <div class="list-name">
-                                {{ creativeItem.name }}
-                              </div>
-                              <div class="list-value">
-                                {{ creativeItem.value }}
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
+          <div class="plans-slider">
+            <div v-for="(plan, index) in pricingData" :key="index" class="col" >
+              <div class="cardWrap px-3 card mb-4 box-shadow h-100">
+                <div class="card-header pb-2 pt-4">
+                  <h1 class="my-0 text-center pb-3">{{ plan.title }}</h1>
+                </div>
+                <div class="card-body">
+                  <!-- Group the creativeHeader, contentHeader, and packagePriceItem in a div -->
+                  <div>
+                    <h6 class="card-title pricing-card-title fw-bold">
+                      {{ plan.creativeHeader }}
+                    </h6>
+                    <ul class="list-unstyled mt-1 mb-4">
+                      <li
+                        class="list-item pt-2"
+                        v-for="(creativeItem, i) in plan.creativeItem"
+                        :key="i"
+                      >
+                        <div
+                          class="list-wrapper d-flex justify-content-between"
+                        >
+                          <div class="list-name">
+                            {{ creativeItem.name }}
+                          </div>
+                          <div class="list-value">
+                            {{ creativeItem.value }}
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
 
-                        <h6 class="card-title pricing-card-title pt-4 fw-bold">
-                          {{ plan.contentHeader }}
-                        </h6>
-                        <ul class="list-unstyled mt-1 mb-4 ">
-                          <li class="list-item pt-2" v-for="(contentItem, i) in plan.contentItem" :key="i">
-                            <div class="list-wrapper d-flex justify-content-between">
-                              <div class="list-name">
-                                {{ contentItem.name }}
-                              </div>
-                              <div class="list-value">
-                                {{ contentItem.value }}
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
+                    <h6
+                      class="card-title pricing-card-title pt-4 fw-bold"
+                    >
+                      {{ plan.contentHeader }}
+                    </h6>
+                    <ul class="list-unstyled mt-1 mb-4">
+                      <li
+                        class="list-item pt-2"
+                        v-for="(contentItem, i) in plan.contentItem"
+                        :key="i"
+                      >
+                        <div
+                          class="list-wrapper d-flex justify-content-between"
+                        >
+                          <div class="list-name">
+                            {{ contentItem.name }}
+                          </div>
+                          <div class="list-value">
+                            {{ contentItem.value }}
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
 
-                        <ul class="list-unstyled mt-1 mb-4 ">
-                          <li class="list-item pt-2" v-for="(packagePriceItem, i) in plan.packagePriceItem" :key="i">
-                            <div class="list-wrapper d-flex justify-content-between pt-4">
-                              <div class="list-name package-price fw-bold">
-                                {{ packagePriceItem.name }}
-                              </div>
-                              <div class="list-value package-price fw-bold">
-                                {{ packagePriceItem.value }}
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
+                    <ul class="list-unstyled mt-1 mb-4">
+                      <li
+                        class="list-item pt-2"
+                        v-for="(
+                          packagePriceItem, i
+                        ) in plan.packagePriceItem"
+                        :key="i"
+                      >
+                        <div
+                          class="list-wrapper d-flex justify-content-between pt-4"
+                        >
+                          <div class="list-name package-price fw-bold">
+                            {{ packagePriceItem.name }}
+                          </div>
+                          <div class="list-value package-price fw-bold">
+                            {{ packagePriceItem.value }}
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
-          </div> -->
-          <div class="plans-slider">
-            <!-- <div class="carousel-item">
-              <div class="plans">
-                <div
-                  class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 d-flex justify-content-center"
-                >
-                </div>
-              </div>
-            </div> -->
-            <!-- Add the v-for loop to generate the plan cards -->
-            <div
-                    v-for="(plan, index) in pricingData"
-                    :key="index"
-                    class="col"
-                    >
-                    <div class="cardWrap px-3 card mb-4 box-shadow h-100">
-                      <div class="card-header pb-2 pt-4">
-                        <h1 class="my-0 text-center pb-3">{{ plan.title }}</h1>
-                      </div>
-                      <div class="card-body">
-                        <!-- Group the creativeHeader, contentHeader, and packagePriceItem in a div -->
-                        <div>
-                          <h6 class="card-title pricing-card-title fw-bold">
-                            {{ plan.creativeHeader }}
-                          </h6>
-                          <ul class="list-unstyled mt-1 mb-4">
-                            <li
-                              class="list-item pt-2"
-                              v-for="(creativeItem, i) in plan.creativeItem"
-                              :key="i"
-                            >
-                              <div
-                                class="list-wrapper d-flex justify-content-between"
-                              >
-                                <div class="list-name">
-                                  {{ creativeItem.name }}
-                                </div>
-                                <div class="list-value">
-                                  {{ creativeItem.value }}
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-
-                          <h6
-                            class="card-title pricing-card-title pt-4 fw-bold"
-                          >
-                            {{ plan.contentHeader }}
-                          </h6>
-                          <ul class="list-unstyled mt-1 mb-4">
-                            <li
-                              class="list-item pt-2"
-                              v-for="(contentItem, i) in plan.contentItem"
-                              :key="i"
-                            >
-                              <div
-                                class="list-wrapper d-flex justify-content-between"
-                              >
-                                <div class="list-name">
-                                  {{ contentItem.name }}
-                                </div>
-                                <div class="list-value">
-                                  {{ contentItem.value }}
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-
-                          <ul class="list-unstyled mt-1 mb-4">
-                            <li
-                              class="list-item pt-2"
-                              v-for="(
-                                packagePriceItem, i
-                              ) in plan.packagePriceItem"
-                              :key="i"
-                            >
-                              <div
-                                class="list-wrapper d-flex justify-content-between pt-4"
-                              >
-                                <div class="list-name package-price fw-bold">
-                                  {{ packagePriceItem.name }}
-                                </div>
-                                <div class="list-value package-price fw-bold">
-                                  {{ packagePriceItem.value }}
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
           </div>
         </div>
       </section>
@@ -1016,6 +941,15 @@ export default {
 
   .plans-slider {
 
+    &.slick-slider {
+      .slick-prev {
+      left: -20px !important;
+    }
+    .slick-next {
+        right: -20px !important;
+      }
+    }
+    
     .slick-slide{
       &:last-child{
         .cardWrap{
@@ -1064,6 +998,7 @@ export default {
         }
       }
     }
+    
   }
 }
 
