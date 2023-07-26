@@ -1025,6 +1025,17 @@ export default {
       &:first-child{
         .cardWrap{
           margin-left: 0;
+          background-color: #000;
+        }
+      }
+      &:nth-child(2){
+        .cardWrap{
+          background-color: #8f1010;
+        }
+      }
+      &:nth-child(3){
+        .cardWrap{
+          background-color: #0c1fc6;
         }
       }
     }
