@@ -944,8 +944,8 @@ export default {
     &.slick-slider {
       .slick-prev {
       left: -20px !important;
-    }
-    .slick-next {
+      }
+      .slick-next {
         right: -20px !important;
       }
     }
