@@ -23,7 +23,7 @@
                 <a href="#services" class="nav-link" v-scroll>SERVICES</a>
               </li>
               <li class="nav-item">
-                <a href="#subscriptions_sec" class="nav-link" v-scroll>PACKAGES</a>
+                <a href="#subscriptions_sec" class="nav-link" v-scroll>PLANS</a>
               </li>
               <li class="nav-item">
                 <a href="#faq_section" class="nav-link" v-scroll>FAQ</a>
