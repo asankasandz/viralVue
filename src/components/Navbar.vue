@@ -26,7 +26,7 @@
                 <a href="#subscriptions_sec" class="nav-link" v-scroll>PLANS</a>
               </li>
               <li class="nav-item">
-                <a href="#faq_section" class="nav-link" v-scroll>FAQ</a>
+                <a href="#faq_section" class="nav-link" v-scroll>HOW VAIRAL WORKS</a>
               </li>
               <li class="nav-item">
                 <a href="#contact_section" class="nav-link" v-scroll>CONTACT US</a>

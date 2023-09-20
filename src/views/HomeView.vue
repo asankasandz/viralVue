@@ -439,7 +439,7 @@
                 <div class="col-md-12">
                   <div class="form-group pt-md-2">
                     <label for="requirements" class="pb-2 ps-1"
-                      >Requirements</label
+                      >Requirements : ( Brief )</label
                     >
                     <textarea
                       id="requirements"
@@ -447,24 +447,27 @@
                       v-model="formData.requirements"
                       class="form-control rounded text-white"
                       rows="5"
-                      placeholder="Enter your requirements"
+                      placeholder="Enter your requirement"
                       required
                     ></textarea>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="contact-btn-wrap text-center py-4">
+            <div class="contact-btn-wrap text-center pt-4 pb-2">
               <button
                 class="contact-btn btn btn-primary text-white" id="contact_btn"
                 @click="sendEmail"
               >
-                Submit
+              Get your free image
               </button>
               <p v-if="message" class="message pt-3" id="contact_message">{{ message }}</p>
               <p v-if="errorMessage" class="text-danger pt-3">
                 {{ errorMessage }}
               </p>
+            </div>
+            <div class="contact-subject-wrap">
+                <p class="contact-subject text-center">Subject to eligibility</p>
             </div>
           </div>
         </div>
@@ -644,7 +647,7 @@ export default {
         {
           title: "Step 2",
           description:
-            "Tell us exactly what you want and we will bring your ideas to life. Our talented team will understand and learn your vision, goals and ideas.",
+            "Tell us exactly what you want and we will bring your ideas to life. Our talented team will understand and learn your vision, goals and ideas. <br><br>Check out our example brief below;<br><br>Create 10 moments of different age groups using the product (brand) in the style of realistic photography (visual type) to be used on social media and website platforms.<br><br>Visual 1<br>Bunch of university students are enjoying a popular soft drink in front of a university environment. These students should showcase joyful emotions while talking to each other while enjoying the soft drink. The group of students should ideally be of Asian ethnicity. The visual caption should be titled to give the impression that the drink brings joy among the youth.<br><br>Visual 2<br>A group of young adults are hanging out at a beach around a bonfire. The generated image should convey a joyous feeling after a tiring day. These individuals are enjoying soft drinks and BBQ. The group of students should ideally be of Asian ethnicity. The visual caption should be titled to give the impression that the drink brings joy during a chill night out.",
         },
         {
           title: "Step 3",
@@ -655,6 +658,11 @@ export default {
           title: "Step 4",
           description:
             "Our skilled creators will take AI-generated content and infuse it with their creativity, rephrasing and combining elements to craft a final masterpiece. With us, you can generate content that matches your unique style and vision.",
+        },
+        {
+          title: "How to Use Generative AI Responsibly",
+          description:
+            "Copyright laws for AI-generated images are still evolving and differ by country. Currently, we follow the guidance of AI experts backed by major companies like Microsoft, Google, etc. <br><br> It's important to understand that AI-generated images are unique to the prompts provided by the user. Even with identical prompts, the resulting images can vary. While the image output is in the public domain within the AI tool and accessible to other users, the ownership of the image belongs to the prompter, as defined by these AI experts. <br><br> For more information, please refer to the Terms of Service at Midjourney, a widely used AI tool at Vairal. <a href='https://docs.midjourney.com/docs/terms-of-service' style='color: white;''> https://docs.midjourney.com/docs/terms-of-service</a>",
         },
       ],
       formData: {
@@ -720,6 +728,8 @@ export default {
         },
       ],
     });
+
+    
   },
   methods: {
     sendEmail() {
@@ -763,6 +773,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .hero {
   background-image: linear-gradient(to bottom right, #040b11, #040b1100);
 
@@ -1040,6 +1051,10 @@ export default {
     }
     .accordion-body {
       background-color: transparent;
+      .midjourney {
+        text-decoration: none;
+        color: #fff !important;
+      }
     }
   }
 }
@@ -1067,7 +1082,13 @@ export default {
         }
       }
       .contact-btn {
-        width: 150px;
+        width: 200px;
+      }
+      .contact-subject-wrap {
+        .contact-subject {
+          font-size: 12px;
+          opacity: 0.6;
+        }
       }
     }
   }

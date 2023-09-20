@@ -16,7 +16,7 @@
               <li><a href="#" class="text-white">Home</a></li>
               <li><a href="#services" class="text-white">Services</a></li>
               <li><a href="#subscriptions_sec" class="text-white">Plans</a></li>
-              <li><a href="#faq_section" class="text-white">FAQs</a></li>
+              <li><a href="#faq_section" class="text-white">HOW VAIRAL WORKS</a></li>
               <li><a href="#contact" class="text-white">Contact us</a></li>
             </ul>
           </div>
